@@ -1,16 +1,56 @@
-.card {
-  float: left;
-  border: solid 1px black;
-  width: 100px;
-  border-radius: 5px;
-  height: 140px;
-  margin-right: 20px;
+body {
+  margin: 20px;
 }
 
-.covered {
-  background-color: black;
+button {
+  font-size: 1.0em;
+  padding: 0.5em 2em;
+  border-radius: 10px;
+  background-color: #ccc;
+}
+button:hover {
+  background-color: lightgreen;
+}
+
+.card {
+  float: left;
+  border-radius: 5px;
+  margin-right: 20px;
 }
 
 .hand {
   overflow: auto;
+}
+
+.message {
+  font-weight: bold;
+}
+
+.card-container, .front, .back {
+  transition: 0.6s;
+  width: 120;
+  height: 167;
+}
+
+.front, .back {
+  backface-visibility:hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.front {
+  z-index: 2;
+  transform:rotateY(180deg);
+}
+
+.back{
+  z-index: 1;
+}
+
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  transform: rotateY(180deg);
+  position: relative;
 }

@@ -19,7 +19,7 @@ class window.Game extends Backbone.Model
     @set 'message', 'You Win!!'
     @set 'winner', 'Player'
 
-  tieScore: ->
+  draw: ->
     @set 'message', 'it is a tie!!!'
     @set 'winner', 'tie'
 
@@ -48,6 +48,6 @@ class window.Game extends Backbone.Model
     else if @get('playerHand').bestScore() > @get('dealerHand').bestScore()
       @playerWins()
     else if @get('playerHand').bestScore() == @get('dealerHand').bestScore()
-      @tieScore()
+      @draw()
     else
       @dealerWins()

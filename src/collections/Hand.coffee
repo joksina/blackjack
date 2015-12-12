@@ -3,13 +3,15 @@ class window.Hand extends Backbone.Collection
 
   initialize: (array, @deck, @isDealer) ->
 
-  hit: -> if @minScore() < 22
+  hit: -> 
     @add(@deck.pop())   
-    @trigger 'hit' 
-    @last() 
+    @trigger 'hit'
+    if @maxScore() > 21 then @bust 
 #check if our minScore is less than or equal to 21 
 #
-  stand: ->  @trigger 'stand', @
+  
+  stand: ->  
+    @trigger 'stand', @
 
   hasAce: -> @reduce (memo, card) ->
     memo or card.get('value') is 1
@@ -27,5 +29,8 @@ class window.Hand extends Backbone.Collection
 
   bestScore: ->
     if @scores()[1] > 21 then @scores()[0] else @scores()[1]
+
+   maxScore: ->
+    if @scores()[1] <= 21 then @scores()[1] else @scores()[0]
 
 

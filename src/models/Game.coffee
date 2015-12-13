@@ -36,6 +36,7 @@ class window.Game extends Backbone.Model
       dealerHand.hit()
       @dealerPlay()
 
+
   compareHands: ->
     # get the first card at dealers and start comparing
     # for best score

@@ -7,6 +7,7 @@ class window.App extends Backbone.Model
     @set 'chips', 100
     # @set 'playerHand', deck.dealPlayer()
     # @set 'dealerHand', deck.dealDealer()
+
   newGame: ->
     if @get('deck').length < 13
       initialize()

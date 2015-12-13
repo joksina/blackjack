@@ -13,6 +13,9 @@ button {
 button:hover {
   background-color: lightgreen;
 }
+h2 {
+  color: lightgrey;
+}
 
 .card {
   float: left;
@@ -26,6 +29,7 @@ button:hover {
 
 .message {
   font-weight: bold;
+  color: white;
 }
 
 .card-container, .front, .back {
@@ -55,4 +59,7 @@ button:hover {
   transform-style: preserve-3d;
   transform: rotateY(180deg);
   position: relative;
+}
+.score {
+  color: lightgrey;
 }

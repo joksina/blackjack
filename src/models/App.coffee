@@ -9,16 +9,18 @@ class window.App extends Backbone.Model
     # @set 'dealerHand', deck.dealDealer()
 
   newGame: ->
+    @set 'chips', 100
     if @get('deck').length < 13
       initialize()
     @set 'chips', (@get 'chips') - 10
     @set 'bet', 10
     game = new Game(@get('deck'))
-    @set 'game', game
+    @set 'game', game 
     game.on('change:winner',
       =>
         switch @get('game').get 'winner'
           when 'player' then @set 'chips', (@get 'chips') + ((@get 'bet') * 2)
           when 'tie' then @set 'chips', (@get 'chips') + (@get 'bet')
     )
+
 
